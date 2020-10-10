@@ -1,5 +1,4 @@
 //This is the main file for the bot, written in discord.js. Don't worry, I haven't exposed the token since it's in a different file. If you want to hide your token when publishing just find a tutorial lol idk.
-
 const { Discord, Client, MessageEmbed } = require('discord.js')
 require('dotenv').config()
 const prefix = process.env.PREFIX;
@@ -9,13 +8,13 @@ const client = new Client()
 //Bot Status (cuz why not)
 client.on('ready', () => {
     console.log("Bot online")
-    client.user.setActivity(`over ${client.guilds.cache.size} servers` , { type: 'WATCHING' })
+    client.user.setActivity(`over ${client.guilds.cache.size} servers | For help go to: https://discord.gg/7acbhYR` , { type: 'WATCHING' })
 })
 
 //Send Bean Image
 client.on('message', async (message) => {
   if(message.content === `${prefix}bean`) {
-  message.channel.send("https://cdn.discordapp.com/attachments/722523115934187531/764215705846546502/Heinzbakedbeans.jpg")
+  message.channel.send("I like your thinking, here you go: https://cdn.discordapp.com/attachments/722523115934187531/764215705846546502/Heinzbakedbeans.jpg")
 }
 })
 
@@ -46,6 +45,7 @@ client.on('message', async (message) => {
 }
 })
 
-
+//YES
+console.log("Loading...")
 
 client.login(process.env.TOKEN);
